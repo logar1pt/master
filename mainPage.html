@@ -1,6 +1,7 @@
 <html>
 <head>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="RegSCript.js"></script>
     <style type="text/css">
         #build {
             font-style:italic;
@@ -23,9 +24,9 @@
         }
     </style>
     <script type="text/javascript">
-        var email_input = '';
-        var login_input = '';
-        var pass_input = '';
+        var email_input;
+        var login_input;
+        var pass_input;
         var $j = jQuery.noConflict();
         var checkInfo = function () {
             email_input = $j('#email').val();
@@ -37,9 +38,9 @@
             $j('#EmailError').text('');
             $j('#LoginError').text('');
             $j('#passError').text('');
-            if (email_input == '') { $j('#EmailError').text("You don't enter Email"); isError = true; }
-            if (login_input == '') { $j('#LoginError').text("You don't enter Login"); isError = true; }
-            if (pass_input == '') { $j('#passError').text("You don't enter Pass"); isError = true; }
+            if (!email_input) { $j('#EmailError').text("You don't enter Email"); isError = true; }
+            if (!login_input) { $j('#LoginError').text("You don't enter Login"); isError = true; }
+            if (!pass_input) { $j('#PassError').text("You don't enter Pass"); isError = true; }
         }
     </script>
 </head>
