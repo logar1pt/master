@@ -2,6 +2,7 @@
 <head>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="http://127.0.0.1:8080/master/js/RegScript.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:8080/master/js/SendXML_JS.js"></script>
     <style type="text/css">
         #build {
             font-style:italic;
@@ -90,15 +91,15 @@
                 <table border="0" style="width:100%">
                     <tr>
                         <td>Max People:</td>
-                        <td>200</td>
+                        <td id="itemMaxPeople">200</td>
                     </tr>
                     <tr>
                         <td>Health People:</td>
-                        <td>150</td>
+                        <td id="itemHealthPeople">150</td>
                     </tr>
                     <tr>
                         <td>Sick People</td>
-                        <td>50</td>
+                        <td id="itemSickPeople">50</td>
                     </tr>
                 </table>
             </td>
@@ -109,20 +110,21 @@
                 <table border="0" style="width:100%">
                     <tr>
                         <td>Medic:</td>
-                        <td>1</td>
+                        <td id="itemMedic">1</td>
                     </tr>
                     <tr>
                         <td>Polic:</td>
-                        <td>3</td>
+                        <td id="itemPolic">3</td>
                     </tr>
                     <tr>
                         <td>School</td>
-                        <td>1</td>
+                        <td id="itemSchool">1</td>
                     </tr>
                 </table>
             </td>
         </tr>
     </table>
+    <input type="button" value="Change People" onclick="sendXML();"/>
 </body>
 
 </html>
