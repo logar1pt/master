@@ -8,6 +8,7 @@
         }
         #peop {
             color:red;
+            width:200px;
         }
         #body {
             position:fixed;
@@ -16,8 +17,8 @@
         }
         #RegForm {
             position:fixed;
-            left:40%;
-            top:30%;
+            right:10%;
+            bottom:20%;
         }
         #InfoTable {
             width:250px;
@@ -27,6 +28,11 @@
             width:500px;
             left:35%;
             top:10%;
+        }
+        #InfoForm {
+            position:fixed;
+            left:15%;
+            top:15%;
         }
     </style>
     <script type="text/javascript">
@@ -52,16 +58,16 @@
 </head>
 
 <body>
-    <img src="http://127.0.0.1:8080/master/pic/shit.png" id="image"/>
+    <!--<img src="http://127.0.0.1:8080/master/pic/shit.png" id="image"/>-->
     <table id="RegForm">
         <tr>
-            <td style="color:red;">E-mail</td>
+            <td>Email</td>
             <td><input type="email" id="email" /></td>
             <td id="EmailError" style="color:red;font-size:20px;" />
         </tr>
         <tr>
             <td>Login</td>
-            <td><input type="text" id="Login" onkeyup="request(this.value);" /></td>
+            <td><input type="text" id="Login" /></td>
             <td id="LoginError" style="color:red;font-size:20px;" />
         </tr>
         <tr>
@@ -70,16 +76,31 @@
             <td id="PassError" style="color:red;font-size:20px" />
         </tr>
     </table>
-    <input type="button" value="Registration" style="position:fixed; right:10%; bottom:10%;" />
-    <div id="message" />
-    <table id="InfoTable" border="1">
+    <input type="button" value="Registration" style="position:fixed; right:10%; bottom:10%;" onclick="request();"/>
+    <table id="InfoTable" border="1" style="width:500px">
+        <tr>
+            <td style="width:150px">Status connection:</td>
+            <td id="peop"></td>
+        </tr>
+    </table>
+    <table id="InfoForm" border="1" style="width:250px">
         <tr>
             <td>People:</td>
-            <td>100</td>
+            <td id="numPeople">
+                <table border="1">
+                    <tr>
+                        <td>Health People:</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td>Sick People</td>
+                        <td>50</td>
+                    </tr>
+                </table>
+            </td>
         </tr>
         <tr>
-            <td>Building:</td>
-            <td>20</td>
+
         </tr>
     </table>
 </body>
