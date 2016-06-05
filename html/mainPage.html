@@ -4,12 +4,53 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="http://127.0.0.1:8080/master/js/RegScript.js"></script>
     <script type="text/javascript" src="http://127.0.0.1:8080/master/js/SendXML_JS.js"></script>
-    <style rel="stylesheet" type="text/css" href="css/styleClass.css"></style>
+    <style type="text/css" >
+                #build {
+            font-style:italic;
+        }
+        #peop {
+            color:red;
+            width:200px;
+        }
+        #body {
+            position:fixed;
+            left:50%;
+            top:60%;
+        }
+        #RegForm {
+            position:fixed;
+            right:10%;
+            bottom:20%;
+        }
+        #InfoTable {
+            width:250px;
+        }
+        #image {
+            position:fixed;
+            width:500px;
+            left:35%;
+            top:10%;
+        }
+        #InfoForm {
+            position:fixed;
+            left:15%;
+            top:15%;
+        }
+		#buttons {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			vertical-align: middle;
+			text-decoration: none;
+			border: 5px solid rgba(0,100,0,100);
+			border-radius: 100%;
+		}
+    </style>
 </head>
 
 <body>
     <!--<img src="http://127.0.0.1:8080/master/pic/shit.png" id="image"/>-->
-    <!--<table id="RegForm">
+    <table id="RegForm">
         <tr>
             <td>Email</td>
             <td><input type="email" id="email" /></td>
@@ -73,15 +114,20 @@
             </td>
         </tr>
     </table>
-    <input type="button" value="Change People" onclick="sendXML();"/>-->
-	<table style="width:450px; position:fixed; left:30%;" border="1">
+    <input type="button" value="Change People" onclick="sendXML();"/>
+	<!--<table style="width:450px; position:fixed; left:30%;" border="1">
 		<tr>
 			<td>TestName</td>
 			<td>TestValue</td>
-			
+            <td>
+                <select name="table-select" onchange="console.log('Here');" style="width:auto" >
+                    <option value="City">Город</option>
+                    <option value="People">Население</option>
+                </select>
+            </td>
 		</tr>
 	</table>
-	<input type="button" value="1" id="buttons"/>
+	<input type="button" value="1" id="buttons"/>-->
 </body>
 
 </html>
