@@ -2,8 +2,10 @@
 <head>
     <title>MyNewProject</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://127.0.0.1:8080/master/js/RegScript.js"></script>
-    <script type="text/javascript" src="http://127.0.0.1:8080/master/js/SendXML_JS.js"></script>
+
+    <script type="text/javascript" src="js/RegScript.js"></script>
+    <script type="text/javascript" src="js/SendXML_JS.js"></script>
+    <script type="text/javascript" src="js/logic.js"></script>
     <style type="text/css" >
                 #build {
             font-style:italic;
@@ -36,20 +38,10 @@
             left:15%;
             top:15%;
         }
-		#buttons {
-			display: inline-block;
-			width: 50px;
-			height: 50px;
-			vertical-align: middle;
-			text-decoration: none;
-			border: 5px solid rgba(0,100,0,100);
-			border-radius: 100%;
-		}
     </style>
 </head>
 
 <body>
-    <!--<img src="http://127.0.0.1:8080/master/pic/shit.png" id="image"/>-->
     <table id="RegForm">
         <tr>
             <td>Email</td>
@@ -97,7 +89,7 @@
         <tr>
             <td>Building:</td>
             <td>
-                <table border="0" style="width:100%">
+                <table border="0" style="width:100%" ng-repeat="">
                     <tr>
                         <td>Medic:</td>
                         <td id="itemMedic">1</td>
@@ -109,25 +101,13 @@
                     <tr>
                         <td>School</td>
                         <td id="itemSchool">1</td>
-                    </tr>
+                    </tr>                    
                 </table>
             </td>
         </tr>
     </table>
-    <input type="button" value="Change People" onclick="sendXML();"/>
-	<!--<table style="width:450px; position:fixed; left:30%;" border="1">
-		<tr>
-			<td>TestName</td>
-			<td>TestValue</td>
-            <td>
-                <select name="table-select" onchange="console.log('Here');" style="width:auto" >
-                    <option value="City">Город</option>
-                    <option value="People">Население</option>
-                </select>
-            </td>
-		</tr>
-	</table>
-	<input type="button" value="1" id="buttons"/>-->
+    <input type="button" value="Show something" onclick="showSomething();" />
+    <input type="button" value="Add building" onclick="addBuilding();"
 </body>
 
 </html>
