@@ -5,45 +5,46 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="js/logic.js"></script>
     <style type="text/css" >
-        
+        #infoTable {
+            position : absolute;
+            left : 10px;
+            top : 10px
+        }
+        #buttonTable {
+            position : absolute;
+            left : 200px;
+            top : 200px
+        }
     </style>
 </head>
 
 <body>
-    <table>
+    <table id="infoTable">
         <tr>
-            <td>
-                <table>
-                    <tr>
-                        <td>Максимальное кол-во людей</td>
-                        <td>100</td>
-                    </tr>
-                    <tr>
-                        <td>Проживает</td>
-                        <td>80</td>
-                    </tr>
-                    <tr>
-                        <td>Здоровых людей</td>
-                        <td>75</td>
-                    </tr>
-                    <tr>
-                        <td>Больных людей</td>
-                        <td>5</td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <table>
-                    <tr>
-                        <td>Медицинское здание</td>
-                        <td><input type="button" value="Перейти в мед здание" id="medHouse" onclick="openMedHouse();" /></td>
-                    </tr>
-                    <tr>
-                        <td>Главное здание</td>
-                        <td><input type="button" value="Перейти в главное здание" id="mainHouse" onclick="openMainHouse();" /></td>
-                    </tr>
-                </table>
-            </td>
+                <td>Максимальное кол-во людей</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Проживает</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>Здоровых людей</td>
+                <td>75</td>
+            </tr>
+            <tr>
+                <td>Больных людей</td>
+                <td>5</td>
+        </tr>
+    </table>
+    <table id="buttonTable">
+        <tr>
+            <td>Медицинское здание</td>
+            <td><input type="button" value="Перейти в мед здание" id="medHouse" onclick="openMedHouse();" /></td>
+        </tr>
+        <tr>
+            <td>Главное здание</td>
+            <td><input type="button" value="Перейти в главное здание" id="mainHouse" onclick="openMainHouse();" /></td>
         </tr>
     </table>
 </body>
