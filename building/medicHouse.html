@@ -2,10 +2,24 @@
 <html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Медицинское здание</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="logicMedic.js"></script>
 </head>
 <body>
+    <input type="button" value="Начать заражение" onclick="startVirus();"/>
     <table>
-        <tr>Кол-во комнат</tr>
+        <tr>
+            <td>Общее количество людей</td>
+            <td><input type="text" value="100" id="maxPeople"/></td>
+        </tr>
+        <tr>
+            <td>Количество здоровых людей</td>
+            <td><input type="text" value="70" id="helthPeople"/></td>
+        </tr>
+        <tr>
+            <td>Количество заболевших людей</td>
+            <td><input type="text" value="30" id="sickPeople"/></td>
+        </tr>
     </table>
 </body>
 </html>
