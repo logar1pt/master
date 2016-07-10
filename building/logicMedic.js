@@ -29,8 +29,8 @@ function getPBuildings () {
 }
 function check () {
 	init();
-	for (var inp in population) {
-		console.log('population['+inp+']>>'+population[inp]);
+	for (var inp in buildings) {
+		console.log('buildings['+inp+']>>'+buildings[inp]);
 	}
 	setAllPeople();
 	for (var inp in population) {
@@ -39,7 +39,7 @@ function check () {
 }
 function setAllPeople() {
 	function setMaxPeople () {
-		$j('#maxPeople').val(population["maxPeople"]);
+		$j('#maxPeople').val(population["healthPeople"] + population["sickPeople"]);
 	}
 	function setHealthPeople () {
 		$j('#healthPeople').val(population["healthPeople"]);
@@ -50,10 +50,10 @@ function setAllPeople() {
 }
 function setAllBuilding () {
 	function setAllBuilding () {
-		$j('#allBuildings').val(buildings["allBuildings"]);
+		$j('#allBuildings').val(buildings["operBuildings"] + buildings["pBuildings"]);
 	}
 	function setOperBuldings () {
-		$j('#operBuilding').val(building["operBuildings"]);
+		$j('#operBuildings').val(buildings["operBuildings"]);
 	}
 	function setPBuildings () {
 		$j('#pBuildings').val(buildings["pBuildings"]);
@@ -70,4 +70,9 @@ function changeSickPeople (znach) {
 }
 function startVirus () {
 	
+}
+function addOperBuild () {
+	buildings["operBuildings"] = buildings["operBuildings"] + 1;
+	console.log('>>' + buildings["operBuildings"]);
+	setAllBuilding();
 }
