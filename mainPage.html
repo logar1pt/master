@@ -1,79 +1,50 @@
-<html>
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <title>MyNewProject</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script type="text/javascript" src="RegSCript.js"></script>
-    <style type="text/css">
-        #build {
-            font-style:italic;
+    <script type="text/javascript" src="js/logic.js"></script>
+    <style type="text/css" >
+        #infoTable {
+            position : absolute;
+            left : 10px;
+            top : 10px
         }
-        #peop {
-            color:red;
-        }
-        #body {
-            position:fixed;
-            left:50%;
-            top:60%;
-        }
-        #RegForm {
-            position:fixed;
-            left:40%;
-            top:10%;
-        }
-        #InfoTable {
-            width:250px;
+        #buttonTable {
+            position : absolute;
+            left : 200px;
+            top : 200px
         }
     </style>
-    <script type="text/javascript">
-        var email_input;
-        var login_input;
-        var pass_input;
-        var $j = jQuery.noConflict();
-        var checkInfo = function () {
-            email_input = $j('#email').val();
-            login_input = $j('#Login').val();
-            pass_input = $j('#pass').val();
-        }
-        var Reg = function () {
-            var isError = false;
-            $j('#EmailError').text('');
-            $j('#LoginError').text('');
-            $j('#passError').text('');
-            if (!email_input) { $j('#EmailError').text("You don't enter Email"); isError = true; }
-            if (!login_input) { $j('#LoginError').text("You don't enter Login"); isError = true; }
-            if (!pass_input) { $j('#PassError').text("You don't enter Pass"); isError = true; }
-        }
-    </script>
 </head>
 
-<body onload="request();">
-    <div id="message" />
-        <table id="RegForm" oninput="checkInfo();">
-            <tr>
-                <td>E-mail</td>
-                <td><input type="email" id="email" /></td>
-                <td id="EmailError" style="color:red;font-size:20px;" />
-            </tr>
-            <tr>
-                <td>Login</td>
-                <td><input type="text" id="Login" /></td>
-                <td id="LoginError" style="color:red;font-size:20px;" />
-            </tr>
-            <tr>
-                <td>Password:</td>
-                <td><input type="password" id="pass"/></td>
-                <td id="PassError" style="color:red;font-size:20px" />
-            </tr>
-            
-        </table>
-    <input type="button" value="Registration" onclick="Reg();" style="position:fixed; right:10%; bottom:10%;" />
-    <table id="InfoTable" border="1">
+<body>
+    <table id="infoTable">
         <tr>
-            <td>People:</td>
-            <td>100</td>
+                <td>Максимальное кол-во людей</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Проживает</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>Здоровых людей</td>
+                <td>75</td>
+            </tr>
+            <tr>
+                <td>Больных людей</td>
+                <td>5</td>
+        </tr>
+    </table>
+    <table id="buttonTable">
+        <tr>
+            <td>Медицинское здание</td>
+            <td><input type="button" value="Перейти в мед здание" id="medHouse" onclick="openMedHouse();" /></td>
         </tr>
         <tr>
-            <td>Building:</td>
-            <td>20</td>
+            <td>Главное здание</td>
+            <td><input type="button" value="Перейти в главное здание" id="mainHouse" onclick="openMainHouse();" /></td>
         </tr>
     </table>
 </body>

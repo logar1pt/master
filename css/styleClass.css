@@ -1,0 +1,40 @@
+﻿        #build {
+            font-style:italic;
+        }
+        #peop {
+            color:red;
+            width:200px;
+        }
+        #body {
+            position:fixed;
+            left:50%;
+            top:60%;
+        }
+        #RegForm {
+            position:fixed;
+            right:10%;
+            bottom:20%;
+        }
+        #InfoTable {
+            width:250px;
+        }
+        #image {
+            position:fixed;
+            width:500px;
+            left:35%;
+            top:10%;
+        }
+        #InfoForm {
+            position:fixed;
+            left:15%;
+            top:15%;
+        }
+		#buttons {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			vertical-align: middle;
+			text-decoration: none;
+			border: 5px solid rgba(0,100,0,100);
+			border-radius: 100%;
+		}

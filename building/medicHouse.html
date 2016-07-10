@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Медицинское здание</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" ></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="logicMedic.js"></script>
+	<style>
+		.queue {
+			position : absolute;
+			right : 10%;
+			top : 10px;
+		}
+		#actionPanel {
+			position : absolute;
+			left : 10%;
+			top : 75%;
+		}
+	</style>
+</head>
+<body onload="init();" >
+    <input type="button" value="Начать заражение" onclick="startVirus();" />
+	<table>
+		<tr>
+			<td>
+				<table>
+					<tr>
+						<td>Общее количество людей</td>
+						<td><input type="text" value="100" id="maxPeople"/></td>
+					</tr>
+					<tr>
+						<td>Количество здоровых людей</td>
+						<td><input type="text" value="70" id="healthPeople"/></td>
+					</tr>
+					<tr>
+						<td>Количество заболевших людей</td>
+						<td><input type="text" value="30" id="sickPeople"/></td>
+					</tr>
+				</table>
+			</td>
+			<td>
+				<table>
+					<tr>
+						<td>Общее количество комнат : </td>
+						<td><input type="text" value="3" id="allBuildings" /></td>
+					</tr>
+					<tr>
+						<td>Кол-во операционных : </td>
+						<td><input type="text" value="1" id="operBuildings"/></td>
+						<td><input type="button" value = "Добавить" onclick="addOperBuild();"/></td>
+					</tr>
+					<tr>
+						<td>Кол-во палат : </td>
+						<td><input type="text" value="2" id="pBuildings"/></td>
+						<td><input type="button" value="Добавить" onclick="addPBuild();" /></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table class="queue">
+		<thead>
+			<th>Очередь</th>
+		</thead>
+		<tbody id="queueItem">
+		</tbody>
+	</table>
+	
+	<input type="button" value="click on me" onclick="check();"/>
+	<input type="button" value="Удалить очередь" onclick="clearQueue();" />
+	
+	<div id="actionPanel">
+		<table>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td id="search">Обследовать больных</td>
+						</tr>
+						<tr>
+							<td><input type="button" value="Начать" onclick="actionButton();"/></td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<td id="analis">Произвести анализ</td>
+						</tr>
+						<tr>
+							<td><input type="button" value="Начать" onclick="actionButton();"/></td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<td id="done">Вылечить</td>
+						</tr>
+						<tr>
+							<td><input type="button" value="Начать" onclick="actionButton();"/></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
