@@ -11,6 +11,11 @@
 			right : 10%;
 			top : 10px;
 		}
+		#actionPanel {
+			position : absolute;
+			left : 10%;
+			top : 75%;
+		}
 	</style>
 </head>
 <body onload="init();" >
@@ -57,7 +62,48 @@
 		<thead>
 			<th>Очередь</th>
 		</thead>
+		<tbody id="queueItem">
+		</tbody>
 	</table>
+	
 	<input type="button" value="click on me" onclick="check();"/>
+	<input type="button" value="Удалить очередь" onclick="clearQueue();" />
+	
+	<div id="actionPanel">
+		<table>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td id="search">Обследовать больных</td>
+						</tr>
+						<tr>
+							<td><input type="button" value="Начать" onclick="actionButton();"/></td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<td id="analis">Произвести анализ</td>
+						</tr>
+						<tr>
+							<td><input type="button" value="Начать" onclick="actionButton();"/></td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table>
+						<tr>
+							<td id="done">Вылечить</td>
+						</tr>
+						<tr>
+							<td><input type="button" value="Начать" onclick="actionButton();"/></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>

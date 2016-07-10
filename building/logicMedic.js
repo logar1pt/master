@@ -45,7 +45,7 @@ function setAllPeople() {
 		sickPeople : setSickPeople()
 	}
 	function setMaxPeople () {
-		$j('#maxPeople').val(population["healthPeople"] + population["sickPeople"]);
+		$j('#maxPeople').val(population["maxPeople"]);
 	}
 	function setHealthPeople () {
 		$j('#healthPeople').val(population["healthPeople"]);
@@ -84,11 +84,19 @@ function startVirus () {
 }
 function addOperBuild () {
 	buildings["operBuildings"]++;
-	$j('.queue').append('<tr><td>'+ (global++) +'</td><td>Операционная</td></tr>')
+	$j('#queueItem').append('<tr><td>'+ (global++) +'</td><td>Операционная</td><td><div id=/"progressBar/"></td></tr>')
+	$j('#progressBar').progressbar({value: 75});
 	setAllBuildings();
 }
 function addPBuild () {
 	buildings["pBuildings"]++;
-	$j('.queue').append('<tr><td>'+ (global++) +'</td><td>Палата</td></tr>')
+	$j('#queueItem').append('<tr><td>'+ (global++) +'</td><td>Палата</td></tr>')
 	setAllBuildings();
+}
+function actionButton () {
+	console.log('>>Start actionButton');
+}
+function clearQueue () {
+	$j('#queueItem').empty();
+	global = 1;
 }
