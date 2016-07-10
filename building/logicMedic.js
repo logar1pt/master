@@ -1,6 +1,7 @@
 ﻿var $j = jQuery.noConflict();
 var population = {};
 var buildings = {};
+var global = 1-0;
 function init() {
 	population["maxPeople"] = getMaxPeople();
 	population["healthPeople"] = getHealthPeople();
@@ -38,6 +39,11 @@ function check () {
 	}
 }
 function setAllPeople() {
+	return {
+		maxPeople : setMaxPeople(),
+		healthPeople : setHealthPeople(),
+		sickPeople : setSickPeople()
+	}
 	function setMaxPeople () {
 		$j('#maxPeople').val(population["healthPeople"] + population["sickPeople"]);
 	}
@@ -48,9 +54,14 @@ function setAllPeople() {
 		$j('#sickPeople').val(population["sickPeople"]);
 	}
 }
-function setAllBuilding () {
+function setAllBuildings () {
+	return {
+		allBuilding : setAllBuilding(),
+		operBuilding : setOperBuldings(),
+		pBuilding : setPBuildings()
+	}
 	function setAllBuilding () {
-		$j('#allBuildings').val(buildings["operBuildings"] + buildings["pBuildings"]);
+		$j('#allBuildings').val(buildings["allBuildings"]);
 	}
 	function setOperBuldings () {
 		$j('#operBuildings').val(buildings["operBuildings"]);
@@ -72,7 +83,12 @@ function startVirus () {
 	
 }
 function addOperBuild () {
-	buildings["operBuildings"] = buildings["operBuildings"] + 1;
-	console.log('>>' + buildings["operBuildings"]);
-	setAllBuilding();
+	buildings["operBuildings"]++;
+	$j('.queue').append('<tr><td>'+ (global++) +'</td><td>Операционная</td></tr>')
+	setAllBuildings();
+}
+function addPBuild () {
+	buildings["pBuildings"]++;
+	$j('.queue').append('<tr><td>'+ (global++) +'</td><td>Палата</td></tr>')
+	setAllBuildings();
 }
